@@ -37,6 +37,7 @@
 .gallery__content .imageContainer img {
   height: 300px;
   width: 100%;
+  margin-left: 0;
 }
 
 .gallery__content .imageContainer h1 {

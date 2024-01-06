@@ -1,6 +1,7 @@
 import {useForm} from "react-hook-form";
 import './RegistrationPage.css';
 import {useNavigate} from "react-router-dom";
+import {useEffect, useState} from "react";
 const initialValues = {
   email: '',
   password: '',
@@ -13,6 +14,22 @@ const initialValues = {
 const RegistrationPage = () => {
   const { register, handleSubmit, formState: { errors } } = useForm( {defaultValues: initialValues} );
   const navigate = useNavigate();
+  const [timer, setTimer] = useState(0);
+  const [timerIntervalId, setTimerIntervalId] = useState(null)
+
+  if(timer >= 5) {
+    clearInterval(timerIntervalId);
+  }
+
+  useEffect(() => {
+    const timerInterval = setInterval(() => {
+      setTimer(prev => prev + 1);
+    }, 1000);
+
+    setTimerIntervalId(timerInterval)
+    return () => clearInterval(timerInterval)
+  }, [])
+
   const onSubmit = () => navigate('/success');
 
   return (
@@ -81,7 +98,7 @@ const RegistrationPage = () => {
             />
           </div>
 
-          <button type="submit">Отправить</button>
+          {timer >= 5 && (<button type="submit">Отправить</button>)}
         </form>
       </div>
   );
