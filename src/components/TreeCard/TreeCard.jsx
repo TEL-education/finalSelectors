@@ -1,6 +1,5 @@
-import React from 'react';
-
 const TreeCard = (props) => {
+  // eslint-disable-next-line react/prop-types
   const {heading, ...rest} = props;
 
   return (
