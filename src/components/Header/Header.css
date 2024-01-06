@@ -37,3 +37,9 @@ header {
   transform: scaleX(1);
   transform-origin: left;
 }
+
+img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 1rem;
+}

@@ -1,6 +1,9 @@
 import {useForm} from "react-hook-form";
-import './RegistrationPage.css';
 import {useNavigate} from "react-router-dom";
+import './RegistrationWithRunningButton.css';
+import {useRef} from "react";
+import shrek from '../../assets/shrek.png'
+
 const initialValues = {
   email: '',
   password: '',
@@ -10,11 +13,18 @@ const initialValues = {
   city: '',
   country: '',
 }
-const RegistrationPage = () => {
+
+const RegistrationWithRunningButton = () => {
   const { register, handleSubmit, formState: { errors } } = useForm( {defaultValues: initialValues} );
   const navigate = useNavigate();
-  const onSubmit = () => navigate('/success');
+  const onSubmit = () => navigate('/success-fire');
+  const ref = useRef(null);
 
+  const onHoverHandle = () => {
+    ref.current.style.position = 'absolute';
+    ref.current.style.top = Math.random() * 200 + 'px';
+    ref.current.style.left = Math.random() * 600 + 'px';
+  }
   return (
       <div className="register">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -41,17 +51,6 @@ const RegistrationPage = () => {
             {errors.lastName && <p>Пожалуйста, заполните обязательное поле!</p>}
           </div>
           <div className="formGroup">
-            <label htmlFor="country">Страна<span>*</span>:</label>
-            <input
-                type="text"
-                name="country"
-                placeholder="Страна"
-                className={errors.country ? 'formControl invalid' : 'formControl'}
-                {...register("country", {required: true})}
-            />
-            {errors.country && <p>Пожалуйста, заполните обязательное поле!</p>}
-          </div>
-          <div className="formGroup">
             <label htmlFor="city">Город<span>*</span>:</label>
             <input
                 type="text"
@@ -71,20 +70,15 @@ const RegistrationPage = () => {
                 {...register("email")}
             />
           </div>
-          <div className="formGroup">
-            <label htmlFor="Phone">Телефон:</label>
-            <input
-                type="tel"
-                className="formControl"
-                placeholder="7 (999) 999-99-99"
-                {...register("phone")}
-            />
-          </div>
 
-          <button type="submit">Отправить</button>
+
+          <div className="runningContainer">
+            <button ref={ref} type="submit" onMouseEnter={onHoverHandle}>Отправить</button>
+          </div>
         </form>
+        <img className="shrek" src={shrek} alt="shrek"/>
       </div>
-  );
+  )
 };
 
-export default RegistrationPage;
+export default RegistrationWithRunningButton;

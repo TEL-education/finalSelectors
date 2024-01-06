@@ -1,6 +1,6 @@
-import React from 'react';
 import  './Header.css';
 import {NavLink} from "react-router-dom";
+import fire from '../../assets/icons/flame.png';
 
 const Header = () => {
   return (
@@ -22,6 +22,13 @@ const Header = () => {
           className={({isActive}) => isActive ? 'link active' : 'link'}
         >
           Registration
+        </NavLink>
+        <NavLink
+          to="/registration-form-fire"
+          className={({isActive}) => isActive ? 'link active' : 'link'}
+        >
+          Registration
+          <img src={fire} alt="fire"/>
         </NavLink>
       </header>
   );
