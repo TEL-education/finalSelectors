@@ -34,7 +34,7 @@ const Header = () => {
           to="/registration-form-timer"
           className={({isActive}) => isActive ? 'link active' : 'link'}
         >
-          Registration (10sec)
+          Registration (5sec)
         </NavLink>
       </header>
   );
