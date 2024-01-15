@@ -31,7 +31,7 @@
   height: 23rem;
   border-radius: 1rem;
   overflow: hidden;
-  border: 0.25px solid #3a3a3a;
+  border: 0.25px solid #157a15;
 }
 
 .gallery__content .imageContainer img {
@@ -45,7 +45,7 @@
   padding: 0;
   margin: 0;
   font-size: 2rem;
-  color: #999;
+  color: #5a5a5a;
 }
 
 @media screen and (min-width: 576px) {

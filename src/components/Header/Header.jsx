@@ -30,6 +30,12 @@ const Header = () => {
           Registration
           <img src={fire} alt="fire"/>
         </NavLink>
+        <NavLink
+          to="/registration-form-timer"
+          className={({isActive}) => isActive ? 'link active' : 'link'}
+        >
+          Registration (10sec)
+        </NavLink>
       </header>
   );
 };
