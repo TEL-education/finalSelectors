@@ -17,7 +17,7 @@ const RegistrationWithTimer = () => {
   const navigate = useNavigate();
   const onSubmit = () => navigate('/success-fire');
 
-  const [timer, setTimer] = useState(10);
+  const [timer, setTimer] = useState(5);
   const [timerIntervalId, setTimerIntervalId] = useState(null)
 
   if(timer === 0) {
