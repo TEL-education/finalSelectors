@@ -5,13 +5,14 @@ header {
   display: flex;
   align-items: center;
   gap: 3rem;
+  justify-content: center;
 }
 
 .link {
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #ffffff;
+  color: #7a7a7a;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -24,14 +25,18 @@ header {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #747bff;
+  background-color: #05336e;
   transform: scaleX(0);
   transition: transform 0.5s ease;
   transform-origin: right;
 }
 
+.link:hover {
+  color: #05336e;
+}
+
 .active {
-  color: #747bff;
+  color: #05336e;
 }
 .link:hover::before, .active::before {
   transform: scaleX(1);
