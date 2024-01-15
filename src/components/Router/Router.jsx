@@ -6,6 +6,8 @@ import RegistrationPage from "../../pages/RegistrationPage/RegistrationPage.jsx"
 import SuccessPage from "../../pages/SuccessPage/SuccessPage.jsx";
 import RegistrationWithRunningButton from "../../pages/RegistrationWithRunningButton/RegistrationWithRunningButton.jsx";
 import SuccessFirePage from "../../pages/SuccessFirePage/SuccessFirePage.jsx";
+import RegistrationWithTimer from "../../pages/RegistrationWithTimer/RegistrationWithTimer.jsx";
+import RegistrationFailPage from "../../pages/RegistrationFailPage/RegistrationFailPage.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +43,16 @@ export const router = createBrowserRouter([
       {
         path: "/success-fire",
         element: <SuccessFirePage />,
+        errorElement: <div>Oops! Something went wrong.</div>, // Error element to render when a route matches an error
+      },
+      {
+        path: "/registration-fail",
+        element: <RegistrationFailPage />,
+        errorElement: <div>Oops! Something went wrong.</div>, // Error element to render when a route matches an error
+      },
+      {
+        path: "/registration-form-timer",
+        element: <RegistrationWithTimer />,
         errorElement: <div>Oops! Something went wrong.</div>, // Error element to render when a route matches an error
       },
     ]
